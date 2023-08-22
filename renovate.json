@@ -5,7 +5,7 @@
     ],
     "regexManagers": [{
       "fileMatch": ["\\.go$"],
-      "matchStrings": ["\"(?<depName>golang.org/*)\""],
+      "matchStrings": ["\"(?<depName>golang.org/.*)\""],
       "depNameTemplate": "{{{ replace 'golang.org' 'example.com' depName }}}",
       "autoReplaceStringTemplate": "\"{{{ depName }}}\"",
       "datasourceTemplate": "custom.fake",
