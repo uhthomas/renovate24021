@@ -1,0 +1,21 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+      "config:base"
+    ],
+    "regexManagers": [{
+      "fileMatch": ["\\.go$"],
+      "matchStrings": ["\"(?<depName>golang.org/*)\""],
+      "depNameTemplate": "{{{ replace 'golang.org' 'example.com' depName }}}",
+      "autoReplaceStringTemplate": "\"{{{ depName }}}\"",
+      "datasourceTemplate": "custom.fake",
+      "currentValueTemplate": "1.0.0"
+    }],
+    "customDatasources": {
+      "fake": {
+        "defaultRegistryUrlTemplate": "https://thomas.firewall.team",
+        "format": "plain"
+      }
+    }
+  }
+  
